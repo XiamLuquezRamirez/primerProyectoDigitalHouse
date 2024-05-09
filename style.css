@@ -1,0 +1,274 @@
+/* NORMALIZACION */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* Mantiene el ancho y  lato a pesar del padding y border */
+    font-family: 'Inconsolata', 'monospace';
+    list-style: none;
+    /*Quitar punto de las listas  */
+    text-decoration: none;
+    /* quitar subrayado en los enlaces */
+    color: white;
+}
+
+body {
+    background-color: black;
+}
+
+header {
+    position: fixed;
+    /* esto hace que el header quede fijo */
+    right: 0;
+    top: 0;
+    z-index: 100;
+    /* esto hace que el header se muestre por encima*/
+    width: 100%;
+    display: flex;
+    align-items: center;
+    /* centra verticalmente el header */
+    justify-content: space-between;
+    /*que los elementos se separen */
+    padding: 15px 3%;
+    background-color: transparent;
+}
+
+.logo{
+    font-size: 30px;
+    font-weight: 800; /* este es el grueso de las letras */
+}
+
+.navegacion{
+    display: flex;
+}
+.navegacion a{
+   margin-left: 40px;
+   font-size: 15px;
+   font-weight: 600px;
+   border-bottom: 2px solid transparent;
+   transition: all 0.5s ease;
+}
+
+.navegacion a:hover{
+    border-bottom: 2px solid white;
+}
+
+#menu-icon{
+    display: none;
+}
+
+#menu-togle{
+    display: none;
+}
+#menu-icon-action{
+    display: none;
+}
+
+
+#menu-icon{
+    font-size: 35px;
+    z-index: 101;
+    cursor: pointer;
+}
+
+
+.hero{
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(245.59deg, #31496e 0%, #385e70, #131313 75%);
+    position: relative;  /* relativo a contenedor */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 2rem;
+}
+
+section{
+    padding: 0 8%;
+}
+
+
+.hero-text h1 {
+    font-family: 'Roboto', 'sans-serif';
+    font-size: 50px;
+    line-height: 1;
+    margin-bottom: 25px;
+    margin: 0 0 30px;
+}
+
+.hero-text p {
+    font-size: 80%;
+    margin-bottom: 40px;
+    line-height: 2;
+}
+
+.hero-text h5 {
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+
+
+.hero-text h4 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.hero-img img {
+    width: 400px;
+    margin: 10% 0 0 10%;
+    height: auto;
+    transition: all 5s linear;
+}
+
+.hero-img img:hover{
+    width: 450px;
+    opacity: 0,6; 
+}
+
+
+.hero-text a{
+    display: inline-block; /* me permite dar un ancho y un alto */
+background-color: #4d4d4d;
+border: 1px solor transparent;
+padding: 15px 30px;
+line-height: 1.4;
+font-size: 14px;
+font-weight: 500;
+border-radius: 40px;
+text-transform: uppercase;
+transition: all 1.5s ease;
+}
+
+.hero-text a:hover{
+    background-color: transparent;
+    border: solid 1px white;
+    transform: translateX(8px);
+}
+
+.hero-text a.videos{
+    background-color: transparent;
+    border: solid 1px white;
+    margin-left: 20px;
+}
+
+.hero-text a.videos i{
+    vertical-align: middle;
+    margin-right: 5PX;
+}
+
+
+.icon{
+    position: absolute;
+    top: 50vh;
+    padding: 0 3%;
+    transform: translateY(-50%)
+   
+}
+
+.icon i {
+    display: block;
+    font-size: 30px;
+    color: white;
+    transition: all .5s ease;
+}
+
+.icon i:hover{
+    color: #4d4d4d;
+    transform: translateY(-5px);
+}
+.scroll-down{
+    position: absolute;
+    bottom: 6%;
+    right: 3%;
+}
+
+.scroll-down i{
+    display: block;
+    padding: 12px;
+font-size: 30px;
+background-color: #6375dd;
+border-radius: 30px;
+transition: all .5s ease;
+}
+
+.scroll-down i:hover{
+    background-color: #4d4d4d;
+    transform: translateY(5px);
+}
+
+@media (max-width: 992px){
+    section{
+        padding: 0 3%;
+    }
+
+    .hero-text{
+        padding: 0;
+    }
+    .hero-img{
+        text-align: center;
+    }
+    .hero-img img{
+        width: 80%;
+        margin: 10% 0 0 10%;
+    }
+    .hero-text p {
+        font-size: 70%;
+    }
+
+    .icon{
+        display: none;
+    }
+    .scroll-down{
+        display: none;
+    }
+
+}
+
+@media (max-width: 768px){
+    .menu-icon-action{
+        display: block;
+    }
+
+    #menu-icon{
+        display: block;
+    }
+
+    .hero-text{
+        text-align: center;
+        padding-top: 100px;
+    }
+    .hero-img img{
+        margin: 0;
+    }
+
+    .hero{
+        height: 100%;
+        gap: 1rem;
+        grid-template-columns: 1fr;
+    }
+    .navegacion{
+       position: absolute;
+       top: 100%;
+       right: -200px;
+       width: 200px;
+       height: 180px;
+       background-color: #021719ef;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       padding: 30px 20px;
+       transition: all 0.5s ease;
+    }
+
+    .navegacion a{
+        display: block;
+        margin: 7px 0;
+    }
+
+    #menu-togle:checked + label.menu-icon-action + ul{
+        right: 0;
+    }
+}
